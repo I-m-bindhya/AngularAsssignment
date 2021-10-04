@@ -4,4 +4,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ##  Demo
 
-Click here to see demo
+Click here to see demo https://i-m-bindhya.github.io/AngularAsssignment/
