@@ -1,0 +1,28 @@
+<h2 class="header">{{data.Method == 'add'? 'Add': 'Edit'}} Image Details</h2>
+<form>
+   <!-- IMAGE TEXT -->
+   <p class="ml-1 mb-2 input-label"> Image Text <span class="text-danger">*</span></p>
+   <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" name="imageTxt" [(ngModel)]="imageDetail.imageText" placeholder="Image Text">
+   </div>
+   <!-- IMAGE  -->
+   <p class="ml-1 mb-2 input-label"> Image <span class="text-danger">*</span></p>
+   <div class="input-group mb-2 mr-sm-2">
+      <input type="file" (change)="onFileSelected($event)" class="form-control" name="image" accept=".jpeg,.jpg,.png" placeholder="Image Url" />
+   </div>
+   <div class="text-center text-info mt-4" *ngIf="loading">
+      <div class="spinner-border" role="status">
+      </div>
+   </div>
+   <!-- PREVIEW OF IMAGE -->
+   <div *ngIf="imageDetail.imageUrl && !loading" class="text-center mt-4">
+      <div class='input-label'>Preview of {{imageDetail.imageName}}</div>
+      <img [src]="imageDetail.imageUrl">        
+   </div>
+   <!-- BUTTONS -->
+   <div class="mt-4 mb-1">
+      <button  [disabled]="!(imageDetail.imageText.trim() && imageDetail.imageUrl.trim() && imageDetail.imageName.trim())" (click)="createOrEdit()" class="btn btn-primary">{{data.Method == 'add'? 'Add': 'Update'}}</button>
+      <button class="btn btn-danger ml-2" (click)="close()">Cancel</button>
+   </div>
+   <div [hidden]="(imageDetail.imageText.trim() && imageDetail.imageUrl.trim() && imageDetail.imageName.trim())" class="alert alert-danger mt-4"> * Please Provide All Mandatory Fields</div>
+</form>

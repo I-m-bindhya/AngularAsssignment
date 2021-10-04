@@ -1,0 +1,11 @@
+<!-- DELETE POPUP -->
+<div style="text-align: center;" class="px-3">
+   <p class="hdr">
+      Are you sure you want to delete '{{imageDetail.imageText}}' ?
+   </p>
+   <button class="btn btn-primary ml-3" mat-button (click)="deleteImage(imageDetail.id)">
+   Yes
+   </button>
+   <!-- CANCEL BUTTON -->
+   <button mat-button class="btn btn-danger  ml-3" (click)="close()" >Cancel</button>
+</div>

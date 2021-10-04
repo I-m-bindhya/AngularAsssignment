@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Poppins'; }
+
+.mat-body, .mat-body-1, .mat-typography {
+    font: 400 14px/20px 'Poppins';
+    letter-spacing: normal;
+}
+
+.mat-toolbar.mat-primary {
+    background: #008cba !important;
+    color: #fff;
+    font-family: 'Poppins';
+}
+
+.Popup .mat-dialog-container {
+    background: #f8f9fa !important;
+    color: black;
+}
+
+.success-snackbar{
+    background-color: #98fdaf;
+    box-shadow: none;
+}
+
+.error-snackbar{
+    background-color:#ff9f9f;
+    box-shadow: none;
+}
+
+.success-snackbar .mat-simple-snackbar, .error-snackbar .mat-simple-snackbar{
+    display: block !important;
+    text-align: center !important;
+    font-family: 'Poppins' !important;
+}

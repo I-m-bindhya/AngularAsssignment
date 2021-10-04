@@ -1,0 +1,43 @@
+<div class="container jumbotron">
+    <div class="h4">
+       Image List Table
+    </div>
+    <!-- ADD BUTTON -->
+    <button mat-raised-button class="ml-auto mb-2" (click)="openPopup('add')">
+       <mat-icon>add_box</mat-icon>
+       Add To Image List
+    </button>
+    <div style="width:100%">
+       <!-- IMAGE LIST TABLE  -->
+       <table class="table">
+          <thead class="bg">
+             <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Image</th>
+                <th scope="col">Image Text</th>
+                <th scope="col"></th>
+             </tr>
+          </thead>
+          <tr *ngFor="let data of imageList;let i=index">
+             <td>{{data.id}}</td>
+             <td>
+                <img [src] = data.imageUrl alt="image of {{data.id}}">
+             </td>
+             <td>{{data.imageText}}</td>
+             <td>
+                
+                <!-- EDIT BUTTON -->
+                <button mat-raised-button (click)="openPopup('edit',data)">
+                   <mat-icon>edit</mat-icon>
+                   Edit
+                </button>
+                <!-- DELETE BUTTON -->
+                <button mat-raised-button class="btn btn-danger ml-2" style="background:#c82333" (click)="OpenDeletePopup(data)">
+                   <mat-icon>delete_outline</mat-icon>
+                   Delete
+                </button>
+             </td>
+          </tr>
+       </table>
+    </div>
+ </div>
